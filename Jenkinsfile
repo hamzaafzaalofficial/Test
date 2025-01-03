@@ -12,6 +12,19 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Deploy') {
+            steps {
+                script {
+                    def startTime = System.currentTimeMillis()
+                    echo 'Deploying...'
+                    // Simulate deployment time
+                    sh 'sleep 300'
+                    def endTime = System.currentTimeMillis()
+                    def deployTime = (endTime - startTime) / 1000
+                    echo "Deploy time: ${deployTime} seconds"
+                }
+            }
+        }
     }
 
     post {
@@ -23,4 +36,5 @@ pipeline {
         }
     }
 }
+
 
