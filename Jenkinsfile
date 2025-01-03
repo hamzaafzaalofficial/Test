@@ -12,7 +12,8 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        
+    }
+
     post {
         success {
             echo 'Pipeline completed successfully.'
@@ -22,4 +23,4 @@ pipeline {
         }
     }
 }
-}
+
